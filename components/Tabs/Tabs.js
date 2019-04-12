@@ -7,17 +7,18 @@ class TabLink {
     this.tabData = this.tabElement.dataset.tab;
     // console.log(this.tabData); 
     
-    // We need to find out if a user clicked 'all' cards or a specific category.  Follow the instructions below to accomplish this task:    
+    // We need to find out if a user clicked 'all' cards or a specific category.  
+    // Follow the instructions below to accomplish this task:    
     
     // Check to see if this.tabData is equal to 'all'
     if(this.tabData === 'all'){
       // If `all` is true, select all cards regardless of their data attribute values
-      this.cards = document.querySelectorAll('card');
-      // console.log(this.cards);
+      this.cards = document.querySelectorAll('.card');
+      console.log(this.cards);
 
     } else {
       // else if `all` is false, only select the cards with matching this.tabData values
-      this.cards = document.querySelector(`.card[data-tab="${this.tabData}"]`);
+      this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`);
       console.log(this.cards);
     }
 
@@ -26,12 +27,13 @@ class TabLink {
       // Pass in a card object to the TabCard class. 
     this.cards = Array.from(this.cards).map(function(card){
       new TabCard(card);
-      console.log(card);
+      // console.log(card);
     });
 
     // Add a click event that invokes this.selectTab
     this.tabElement.addEventListener('click', () => this.selectTab());
   }
+
 
   selectTab(){
 
@@ -63,11 +65,11 @@ class TabLink {
 class TabCard {
   constructor(cardElement){
     // Assign this.cardElement to the cardElement DOM reference
-    // this.cardElement;
+    this.cardElement = cardElement;
   }
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
-    // this.cardElement;
+    this.cardElement.display = flex;
   }
 
 }
