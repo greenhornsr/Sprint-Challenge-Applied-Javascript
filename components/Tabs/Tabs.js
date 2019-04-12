@@ -14,12 +14,12 @@ class TabLink {
     if(this.tabData === 'all'){
       // If `all` is true, select all cards regardless of their data attribute values
       this.cards = document.querySelectorAll('.card');
-      console.log(this.cards);
+      // console.log(this.cards);
 
     } else {
       // else if `all` is false, only select the cards with matching this.tabData values
       this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`);
-      console.log(this.cards);
+      // console.log(this.cards);
     }
 
      // Map over the newly converted NodeList we just created in our if statement above. 
@@ -42,7 +42,7 @@ class TabLink {
     
     // Iterate through the NodeList removing the .active-tab class from each element
     tabs.forEach(function(tab){
-      tab.classList.remove('.active-tab');
+      tab.classList.remove('active-tab');
     })
 
     // Select all of the elements with the .card class on them
@@ -54,7 +54,7 @@ class TabLink {
     })
     
     // Add a class of ".active-tab" to this.tabElement
-    this.tabElement;
+    this.tabElement.classList.toggle('active-tab');
   
     // Notice we are looping through the this.cards array and invoking selectCard() 
     // from the TabCard class. Just un-comment the code and study what is happening here.
@@ -69,7 +69,7 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
-    this.cardElement.display = flex;
+    this.cardElement.style.display = flex;
   }
 
 }
@@ -85,7 +85,7 @@ class TabCard {
 */
 let tabs = document.querySelectorAll('.tab');
 tabs.forEach(function(tab){
-  new TabLink(tab);
+  return new TabLink(tab);
 });
 
 
